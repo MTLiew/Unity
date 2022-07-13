@@ -15,4 +15,19 @@ public class BattleHUD : MonoBehaviour
     {
         
     }
+
+    public void toggleAttackMenu()
+    {
+
+    }
+
+    public void toggleSkillMenu()
+    {
+
+    }
+
+    public void toggleItemMenu()
+    {
+
+    }
 }
