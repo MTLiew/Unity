@@ -7,7 +7,7 @@ public class Entity : MonoBehaviour
     public string entityName;
     public int entityLevel;
 
-    public int damage;
+    public int damage; //attack
 
     public int maxHP;
     public int currentHP;
@@ -15,7 +15,6 @@ public class Entity : MonoBehaviour
     public float maxActionPoints = 2;
     public float currentActionPoints;
 
-    //public int 
     
     public bool TakeDamage(int dmg)
     {

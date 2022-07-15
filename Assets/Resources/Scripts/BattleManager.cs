@@ -22,6 +22,10 @@ public class BattleManager : MonoBehaviour
 
     public Text nameplate;
 
+    public GameObject PlayerBattleHUD;
+    public GameObject EnemyTurnHUD;
+    public GameObject WaitingHUD;
+
     void Start()
     {
         state = BattleState.START;
@@ -49,11 +53,15 @@ public class BattleManager : MonoBehaviour
         state = BattleState.PLAYERTURN;
         player.currentActionPoints = player.maxActionPoints;
 
+        EnemyTurnHUD.SetActive(false);
+        PlayerBattleHUD.SetActive(true);
+
         Debug.Log("Choose an action");
     }
 
     IEnumerator PlayerAttack()
     {
+        WaitingHUD.SetActive(true);
         Debug.Log("Player attacks!");
 
         bool isDead = enemy.TakeDamage(player.damage);
@@ -78,6 +86,9 @@ public class BattleManager : MonoBehaviour
 
     public IEnumerator EnemyTurn()
     {
+        WaitingHUD.SetActive(false);
+        EnemyTurnHUD.SetActive(true);
+
         state = BattleState.ENEMYTURN;
         Debug.Log("Enemy attacks!");
 

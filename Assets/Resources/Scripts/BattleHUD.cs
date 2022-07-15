@@ -4,26 +4,25 @@ using UnityEngine;
 
 public class BattleHUD : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Canvas playerInterface;
+    public GameObject BattleMenu;
+    public GameObject AttackMenu;
+    public GameObject SkillMenu;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
     }
 
     public void toggleAttackMenu()
     {
-
+        BattleMenu.SetActive(!BattleMenu.activeSelf);
+        AttackMenu.SetActive(!AttackMenu.activeSelf);
     }
 
     public void toggleSkillMenu()
     {
-
+        BattleMenu.SetActive(!BattleMenu.activeSelf);
+        SkillMenu.SetActive(!SkillMenu.activeSelf);
     }
 
     public void toggleItemMenu()
